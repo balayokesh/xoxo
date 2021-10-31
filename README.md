@@ -1,6 +1,6 @@
 <h1 align='center'>Let's play XOXO</h1>
 
-Live demo link: https://balayokesh.github.io/xoxo/
+Live project link: https://balayokesh.github.io/xoxo/
 
 Demo video link: https://youtu.be/JxEHVSOB1dc
 
