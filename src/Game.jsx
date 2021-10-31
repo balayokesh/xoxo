@@ -28,17 +28,34 @@ const Game = () => {
     var [count, setCount] = useState(1);
 
     const handleClick = (event) => {
+        let a00 = document.getElementById('a00').innerHTML;
+        let a01 = document.getElementById('a01').innerHTML;
+        let a02 = document.getElementById('a02').innerHTML;
+        let a10 = document.getElementById('a10').innerHTML;
+        let a11 = document.getElementById('a11').innerHTML;
+        let a12 = document.getElementById('a12').innerHTML;
+        let a20 = document.getElementById('a20').innerHTML;
+        let a21 = document.getElementById('a21').innerHTML;
+        let a22 = document.getElementById('a22').innerHTML;
+
+        if ((a00 === 'o' && a01 === 'o' && a02 === 'o') || (a10 === 'o' && a11 === 'o' && a12 === 'o') || (a20 === 'o' && a21 === 'o' && a22 === 'o') || (a00 === 'o' && a10 === 'o' && a20 === 'o') || (a01 === 'o' && a11 === 'o' && a21 === 'o') || (a02 === 'o' && a12 === 'o' && a22 === 'o') || (a00 === 'o' && a11 === 'o' && a12 === 'o') || (a02 === 'o' && a11 === 'o' && a20 === 'o')) {
+            alert("Player o won");
+            reset();
+        }
+        else if ((a00 === 'x' && a01 === 'x' && a02 === 'x') || (a10 === 'x' && a11 === 'x' && a12 === 'x') || (a20 === 'x' && a21 === 'x' && a22 === 'x') || (a00 === 'x' && a10 === 'x' && a20 === 'x') || (a01 === 'x' && a11 === 'x' && a21 === 'x') || (a02 === 'x' && a12 === 'x' && a22 === 'x') || (a00 === 'x' && a11 === 'x' && a12 === 'x') || (a02 === 'x' && a11 === 'x' && a20 === 'x')) {
+            alert("Player x won");
+            reset();
+        }
+
         let currentPlayer = (count % 2 === 0) ? 'o' : 'x';
-        let a00 = document.getElementById('a00').value;
-        let a01 = document.getElementById('a01').value;
-        let a02 = document.getElementById('a02').value;
-        let a10 = document.getElementById('a10').value;
-        let a11 = document.getElementById('a11').value;
-        let a12 = document.getElementById('a12').value;
-        let a20 = document.getElementById('a20').value;
-        let a21 = document.getElementById('a21').value;
-        let a22 = document.getElementById('a22').value;
         document.getElementById(event.target.id).innerHTML = currentPlayer;
+        
+        if ((a00 === 'o' && a01 === 'o' && a02 === 'o') || (a10 === 'o' && a11 === 'o' && a12 === 'o') || (a20 === 'o' && a21 === 'o' && a22 === 'o') || (a00 === 'o' && a10 === 'o' && a20 === 'o') || (a01 === 'o' && a11 === 'o' && a21 === 'o') || (a02 === 'o' && a12 === 'o' && a22 === 'o') || (a00 === 'o' && a11 === 'o' && a12 === 'o') || (a02 === 'o' && a11 === 'o' && a20 === 'o')) {
+            alert("Player o won");
+        }
+        else if ((a00 === 'x' && a01 === 'x' && a02 === 'x') || (a10 === 'x' && a11 === 'x' && a12 === 'x') || (a20 === 'x' && a21 === 'x' && a22 === 'x') || (a00 === 'x' && a10 === 'x' && a20 === 'x') || (a01 === 'x' && a11 === 'x' && a21 === 'x') || (a02 === 'x' && a12 === 'x' && a22 === 'x') || (a00 === 'x' && a11 === 'x' && a12 === 'x') || (a02 === 'x' && a11 === 'x' && a20 === 'x')) {
+            alert("Player x won");
+        }
 
         setCount(count + 1);
     }
