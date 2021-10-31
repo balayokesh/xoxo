@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, BrowserRouter} from 'react-router-dom';
+
+import reportWebVitals from './reportWebVitals';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Game from './Game';
+
+const Routing = () => {
+  return (
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Route path="/" exact component={App} />
+      <Route path="/game" component={Game} />
+    </BrowserRouter>
+  );
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Routing />
   </React.StrictMode>,
   document.getElementById('root')
 );

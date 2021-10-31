@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { makeStyles, Container, Typography, Button } from '@material-ui/core';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const useStyles = makeStyles({
+	mainDiv: {
+		height: '100vh',
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	innerDiv: {
+		display: 'flex',
+		flexDirection: 'column',
+		textAlign: 'center',
+	},
+	link: {
+		color: '#fff',
+		textDecoration: 'none',
+	}
+});
+
+const App = () => {
+	const classes = useStyles();
+	return (
+		<Container className={classes.mainDiv}>
+			<Container className={classes.innerDiv}>
+				<Typography variant='h3'>
+					Let's play XoXo
+				</Typography>
+				<Button variant='contained' onClick={()=>{window.location.href = '/game'}}>
+					Play Game
+				</Button>
+			</Container>
+		</Container>
+	);
 }
 
 export default App;
