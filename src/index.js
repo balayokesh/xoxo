@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter} from 'react-router-dom';
+import { Route, BrowserRouter, HashRouter} from 'react-router-dom';
 
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -11,7 +11,7 @@ const Routing = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Route path="/" exact component={App} />
-      <Route path="/game" component={Game} />
+      <Route path="/game" exact component={Game} />
     </BrowserRouter>
   );
 }

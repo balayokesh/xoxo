@@ -1,4 +1,5 @@
 import { makeStyles, Container, Typography, Button } from '@material-ui/core';
+import {useHistory} from 'react-router-dom';
 
 const useStyles = makeStyles({
 	mainDiv: {
@@ -19,6 +20,12 @@ const useStyles = makeStyles({
 });
 
 const App = () => {
+
+	let history = useHistory()
+	const handleClick = () => {
+		history.push('/game');
+	}
+
 	const classes = useStyles();
 	return (
 		<Container className={classes.mainDiv}>
@@ -26,7 +33,7 @@ const App = () => {
 				<Typography variant='h3'>
 					Let's play XoXo
 				</Typography>
-				<Button variant='contained' onClick={()=>{window.location.href = '/game'}}>
+				<Button variant='contained' onClick={handleClick}>
 					Play Game
 				</Button>
 			</Container>
